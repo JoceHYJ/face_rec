@@ -6,9 +6,10 @@ from collections import deque
 ap = argparse.ArgumentParser()
 args = vars(ap.parse_args())
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-cap = cv2.VideoCapture(0)
-# cap = cv2.VideoCapture('video_1.mp4')
+# cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture('video_1.mp4')
 pts = deque(maxlen=124)
+
 while True:
     ret, frame = cap.read()
     frame = cv2.flip(frame, 1)
@@ -20,7 +21,7 @@ while True:
 
     for (x, y, w, h) in faces:
         cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2)
-        cv2.putText(frame, 'face', (w / 2 + x, y - h / 5), cv2.FONT_HERSHEY_PLAIN, 2.0, (255, 255, 255), 2, 1)
+        # cv2.putText(frame, 'face', (w / 2 + x, y - h / 5), cv2.FONT_HERSHEY_PLAIN, 2.0, (255, 255, 255), 2, 1)
         center = (x + w / 2, y + h / 2)
         print(center)
         pts.appendleft(center)
