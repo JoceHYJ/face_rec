@@ -9,11 +9,11 @@ if __name__ == '__main__':
     # 人脸识别，级联分类器
     face = cv.CascadeClassifier('./haarcascade_frontalface_default.xml')
 
-    # 保存视频
-    writer = cv.VideoWriter(filename='./out.mp4',
-                            fourcc=cv.VideoWriter.fourcc(*'MP4V'),  # 视频编码 fourcc
-                            frameSize=[int(cap.get(3)), int(cap.get(4))],  # 获取摄像头分辨率
-                            fps=24)
+    # # 保存视频
+    # writer = cv.VideoWriter(filename='./out.mp4',
+    #                         fourcc=cv.VideoWriter.fourcc(*'MP4V'),  # 视频编码 fourcc
+    #                         frameSize=[int(cap.get(3)), int(cap.get(4))],  # 获取摄像头分辨率
+    #                         fps=24)
 
     while True:
         flag, frame = cap.read()  # flag 是否读取了图片 frame
@@ -22,7 +22,7 @@ if __name__ == '__main__':
         # gray = cv.cvtColor(frame, cv.cvtColor(frame, code=cv.COLOR_BGR2GRAY))
 
         # 保存
-        writer.write(frame)
+        # writer.write(frame)
 
         faces = face.detectMultiScale(frame)
         for x, y, w, h in faces:
@@ -38,5 +38,5 @@ if __name__ == '__main__':
             break
 
     cap.release()  # 释放内存
-    writer.release()  # 释放内存
+    # writer.release()  # 释放内存
     cv.destroyAllWindows()

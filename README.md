@@ -20,9 +20,7 @@ run **face_rec.py** for face detection/recognition
 ## Step 3: Draw recognition frame
 ` cv.rectangle(frame, pt1=(x, y), pt2=(x + w, y + h), color=(255, 255, 0), thickness=2)`
 
-## Step 4: Save video
-
-
 ## Step 5: Release memory & exit program
 
 # Object Tracking and Draw the Motion Track
+run **track_drawing.py**
