@@ -4,7 +4,9 @@ Face detection and tracking with opencv
 
 # Requirements
 Anaconda 3
+
 opencv
+
 laptop with camera
 
 # Face Recognition
@@ -16,9 +18,10 @@ run **face_rec.py** for face detection/recognition
 `face = cv.CascadeClassifier('./haarcascade_frontalface_default.xml')
 `
 ## Step 3: Draw recognition frame
-` cv.rectangle(frame, pt1=(x, y), pt2=(x + w, y + h), color=(255, 255, 0))`
+` cv.rectangle(frame, pt1=(x, y), pt2=(x + w, y + h), color=(255, 255, 0), thickness=2)`
 
 ## Step 4: Save video
+
 
 ## Step 5: Release memory & exit program
 
